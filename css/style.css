@@ -18,6 +18,55 @@ body {
   color: gray;
   background: #e8e8e8;
 }
+.work {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .work {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .work {
+    height: 150px;
+  }
+}
+/* Ensure Lightbox2's sprite icons (including close icon) are visible */
+.lightbox .lb-close {
+  background: url('https://cdn.jsdelivr.net/npm/lightbox2@2/dist/images/close.png') top right no-repeat;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+
+/* Overlay close button - optional custom override */
+.lb-close::after {
+  content: "X";
+  font-size: 32px;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 10001;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+
 
 #page {
   position: relative;
@@ -345,6 +394,137 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   float: left;
 }
+
+/* Hero section custom fix */
+.hero-slide {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  position: relative;
+  padding: 3em 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-slide {
+    background-position: top center !important;
+    background-size: cover !important;
+  }
+
+  #fh5co-hero .slider-text-inner {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1em;
+    border-radius: 8px;
+  }
+
+  #fh5co-hero .slider-text-inner h1,
+  #fh5co-hero .slider-text-inner h2 {
+    color: #000;
+    font-size: 18px !important;
+    line-height: 1.4;
+  }
+
+  #fh5co-hero .btn {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+}
+
+/* Hero section restructuring for mobile */
+.hero-slide {
+  position: relative;
+  min-height: 600px;
+}
+
+.hero-image {
+  background-image: url('../images/441227949_1516486282411893_1285418296043754588_n.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 600px;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    min-height: 300px;
+  }
+
+  .hero-text-container {
+    padding: 2em 1em;
+  }
+
+  .slider-text-inner {
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .slider-text-inner h1,
+  .slider-text-inner h2 {
+    font-size: 18px !important;
+    color: #000;
+  }
+
+  .slider-text-inner .btn {
+    font-size: 14px !important;
+  }
+
+  #fh5co-hero .slider-text {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+/* Hero section restructuring for mobile */
+.hero-slide {
+  position: relative;
+  min-height: 600px;
+}
+
+.hero-image {
+  background-image: url('../images/441227949_1516486282411893_1285418296043754588_n.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 600px;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    min-height: 300px;
+  }
+
+  .hero-text-container {
+    padding: 2em 1em;
+  }
+
+  .slider-text-inner {
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .slider-text-inner h1,
+  .slider-text-inner h2 {
+    font-size: 18px !important;
+    color: #000;
+  }
+
+  .slider-text-inner .btn {
+    font-size: 14px !important;
+  }
+
+  #fh5co-hero .slider-text {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+
 #fh5co-hero .btn {
   font-size: 24px;
 }
@@ -1471,6 +1651,18 @@ input[type="text"] {
   list-style: none;
   color: rgba(0, 0, 0, 0.3);
   font-weight: 400;
+}
+@keyframes pulse-colour {
+  0%   { background-color: #ffffff; color: #111111; border-color: #66D37E; }
+  25%  { background-color: #66D37E; color: white; }
+  50%  { background-color: #7ad98f; color: white; }
+  75%  { background-color: #111111; color: #ffffff; }
+  100% { background-color: #ffffff; color: #111111; border-color: #66D37E; }
+}
+
+.btn-highlight {
+  animation: pulse-colour 3s infinite;
+  transition: all 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
